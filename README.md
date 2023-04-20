@@ -38,3 +38,28 @@ Tag                                    Module           Size       Creation Time
  logistic_regression:ygtuocw7mk2g7ldu   bentoml.sklearn  1.25 KiB   2023-04-20 11:04:36
  scaler:yfssyqo7mke2xldu                bentoml.sklearn  1.39 KiB   2023-04-20 11:04:36
 ```
+
+## Run a Bento Service Api to Query a Model
+To run the bento service locally simply use the following command:
+```
+bentoml serve .\src\bento_app.py:service --reload
+```
+Once this is up an running it will provide you with an endpoint that can be queried to get predictions from the model.
+You can do this by making a HTTP request, an example of a cURL command to query the model is found below:
+```
+curl --location --request POST 'http://localhost:3000/predict' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "Sepal_Length": 5.1,
+  "Sepal_Width": 3.5,
+  "Petal_Length": 1.4,
+  "Petal_Width": 0.2
+}'
+```
+This will return the following prediction:
+```
+{
+    "Results": 0,
+    "Model": "Random Forest"
+}
+```

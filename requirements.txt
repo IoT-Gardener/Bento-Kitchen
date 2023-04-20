@@ -1,3 +1,4 @@
 bentoml==1.0.18
 pandas==2.0.0
 scikit-learn==1.2.2
+pydantic==1.10.7
