@@ -63,3 +63,19 @@ This will return the following prediction:
     "Model": "Random Forest"
 }
 ```
+
+## Build a Bento!
+Once the models have been created and saved, and the service api has been created it is time to package it all up and build a bento! To do this, simply run the following command:
+```
+bentoml build
+```
+Once this command has been run you can view a list of all of the bentos that have been created using the command:
+```
+bentoml list
+```
+Which should output something similar to the following: 
+```
+Tag                               Size        Creation Time        Path
+iris_classifier:cx2sch67rwyrdldu  100.54 KiB  2023-04-20 16:07:39  ~\bentoml\bentos\iris_classifier\cx2sch67rwyrdldu
+iris_classifier:3vxdwt67rofv7ldu  100.54 KiB  2023-04-20 15:59:16  ~\bentoml\bentos\iris_classifier\3vxdwt67rofv7ldu
+```

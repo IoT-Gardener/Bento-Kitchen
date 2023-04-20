@@ -1,0 +1,8 @@
+service: "src/bento_app.py:service"
+include:
+ - "src/bento_app.py"
+python:
+  packages:
+  - pandas==2.0.0
+  - scikit-learn==1.2.2
+  - pydantic==1.10.7
