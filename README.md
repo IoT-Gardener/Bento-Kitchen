@@ -17,3 +17,24 @@ Bonus step is to install of all the required python packages from the requiremen
 ```
 pip install -r requirements.txt
 ```
+
+## Train and Save Models
+To train an iris model and save it to BentoML run the script `train_model.py` using the following command:
+```
+python src/train_model.py
+```
+This will create a scaler and train 5 machine learning models to classify iris plants.
+You can see a list of all the versions of the models in BentoML by running the following command:
+```
+bentoml models list
+```
+The output should look something like this:
+```
+Tag                                    Module           Size       Creation Time       
+ random_forest:yjus3n67mk5wtldu         bentoml.sklearn  84.17 KiB  2023-04-20 11:04:37
+ decision_tree:yiup63g7mkdy7ldu         bentoml.sklearn  3.03 KiB   2023-04-20 11:04:37
+ gaussian_naive_bayes:yibvyzw7mky5hldu  bentoml.sklearn  1.31 KiB   2023-04-20 11:04:37
+ knn:yhgsjzg7mkezxldu                   bentoml.sklearn  9.80 KiB   2023-04-20 11:04:36
+ logistic_regression:ygtuocw7mk2g7ldu   bentoml.sklearn  1.25 KiB   2023-04-20 11:04:36
+ scaler:yfssyqo7mke2xldu                bentoml.sklearn  1.39 KiB   2023-04-20 11:04:36
+```
